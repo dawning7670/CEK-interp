@@ -183,14 +183,13 @@
 ;     procedure-bindings))
 
 (define init-bindings
-  (let ([ns (make-base-namespace)])
-    (map (lambda (sym) (cons sym (eval sym ns)))
-         ;    '(+ - * =)))
-         '(number? integer? real? zero? + - * / < > <= >= =
-                   string? string substring string-length string-ref
-                   char? char->integer integer->char
-                   pair? list? null? list cons car cdr
-                   display void))))
+  (map (lambda (sym) (cons sym (eval sym)))
+       ;    '(+ - * =)))
+       '(number? integer? real? zero? + - * / < > <= >= =
+                 string? string substring string-length string-ref
+                 char? char->integer integer->char
+                 pair? list? null? list cons car cdr
+                 display void)))
 
 ;  boolean? and or not
 ;  eq? eqv? equal?)))
